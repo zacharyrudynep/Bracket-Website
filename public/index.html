@@ -78,12 +78,13 @@
     document.getElementById('tab-saved').onclick=()=>{ document.getElementById('view-customize').style.display='none'; document.getElementById('view-saved').style.display='block'; document.getElementById('tab-saved').classList.add('active'); document.getElementById('tab-customize').classList.remove('active'); renderSaved(); };
     loadState(); if(!rounds[0].length) initBracket(); renderMain();
   </script>
-  <script src="script.js"></script>
-  <!-- Vercel Speed Insights -->
-  <script src="/_vercel/speed-insights/script.js" async></script>
   <script>
-    window.va = window.va || function(){ (window.vaq = window.vaq || []).push(arguments) };
+    import { SpeedInsights } from '@vercel/speed-insights/next';
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    import { Analytics } from '@vercel/analytics/next';
+  </script>
+  <SpeedInsights />
+  <Analytics />
 </body>
 </html>
